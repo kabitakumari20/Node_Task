@@ -20,37 +20,6 @@ const userSchema = new mongoose.Schema(
     }
 );
 
-
-const categorySchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true
-    },
-    question: [{
-        type: mongoose.Schema.Types.ObjectId,
-
-        ref: "Question"
-    }]
-
-}, {
-    timestamps: true,
-    versionKey: false,
-});
-
-const questionSchema = new mongoose.Schema({
-    text: String,
-    // categories: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Category'
-    // }]
-}, {
-    timestamps: true,
-    versionKey: false,
-});
-
-
 userSchema.statics.findByToken = function (token, res) {
     var user = this;
     var decoded;
@@ -79,11 +48,7 @@ userSchema.statics.findByToken = function (token, res) {
 
 const User = new mongoose.model("User", userSchema);//
 
-const Category = new mongoose.model('Category', categorySchema);
-const Question = new mongoose.model('Question', questionSchema);
 
 module.exports = {
-    User,
-    Category,
-    Question
+    User
 }
