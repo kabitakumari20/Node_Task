@@ -10,18 +10,16 @@ app.use(bodyParser.urlencoded({
 }));
 const multer = require('multer');
 
-// const upload = multer({ dest: 'uploads/' });
-
 const port = process.env.PORT || 3000;
 const routes = require("./routes");
 const path = require('path')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/'); // Directory to save uploaded files
+        cb(null, 'uploads/'); 
     },
     filename: function (req, file, cb) {
-        cb(null, `${Date.now()}-${file.originalname}`); // Unique filename
+        cb(null, `${Date.now()}-${file.originalname}`); 
     }
 });
 const upload = multer({ storage: storage });
@@ -43,10 +41,6 @@ const fileUpload = async (req, res) => {
 app.post('/upload', upload.single('image'), fileUpload);
 
 
-// const fileUpload = require('express-fileupload');
-// app.use(fileUpload());
-
-
 const server = require("http").Server(app)
 
 app.get('/', function (req, res) {
@@ -54,16 +48,6 @@ app.get('/', function (req, res) {
 });
 
 
-// app.post('/upload', upload.single('image'), (req, res) => {
-//     try {
-//         let path = req.file.path;
-//         console.log("path=======>>", path);
-//         return res.send({ url: path });
-//     } catch (error) {
-//         console.error(error);
-//         return res.status(500).json({ error: 'Failed to upload file' });
-//     }
-// });
 
 routes.map(route => {
     app.use(route.path, route.handler);

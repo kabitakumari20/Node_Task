@@ -33,26 +33,6 @@ const signup = async (req, res) => {
 
 
 
-
-
-const fileUplaod1 = async (req, res) => {
-    try {
-        // Get the uploaded file from the request
-        let uploadedFile = req.file;
-
-        // Construct the URL path for the uploaded file
-        let urlPath = `/uploads/${uploadedFile.filename}`;
-
-        console.log("File URL Path:", urlPath);
-
-        // Return the URL path in the response
-        return res.send({ url: urlPath });
-    } catch (error) {
-        console.error("Error uploading file:", error);
-        return res.status(500).json({ error: "Error uploading file" });
-    }
-};
-
 const fileUplaod = async (req, res) => {
     try {
         let uploadedFile = req.file;
