@@ -1,0 +1,502 @@
+{
+	"info": {
+		"_postman_id": "fe479046-33ca-46f7-9d89-957eb069700e",
+		"name": "nodejsTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27095524"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signupUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"kabita\",\r\n    \"email\": \"kabita445@gmail.com\",\r\n    \"profilePicture\": \"uploads\\\\8b904dfc051cd2ce57423fa07ddaa575\",\r\n    \"password\": \"Demo@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userlogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \" kabita445@gmail.com\",\r\n    \"password\": \"Demo@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjdmYTllODUzYmZjZjcyMWUzYmFkNjMiLCJpYXQiOjE3MTk2NjI0Mzl9.TBl2-nOK0ridn33qLJb86QC_EllT3WZBYFSoGruXcEY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/viewUserProfile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"viewUserProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjgwNWExMzQyZDZiYzIzY2M0NzZiNjUiLCJpYXQiOjE3MTk2ODk1Mzh9.DcxMbTkrjbYyNTvWKn4ZJrJxs02IdJThbv2r5yTe06E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"diyaTest\",\r\n    \"email\": \"diyaTest@gmail.com\",\r\n    \"profilePicture\": \"uploads8b904dfc051cd2ce57423fa07ddaa575\",\r\n    \"password\": \"Demo@1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/editUserProfile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"editUserProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjdmYTllODUzYmZjZjcyMWUzYmFkNjMiLCJpYXQiOjE3MTk2NjI0Mzl9.TBl2-nOK0ridn33qLJb86QC_EllT3WZBYFSoGruXcEY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/deleteUserById",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"deleteUserById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListOfUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/getListOfUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"getListOfUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fileUplaod",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/fileUplaod",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"fileUplaod"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fileUplaod Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Earbords\",\r\n    \"question\":[\"667fd1a8c0aa43ee07a2ffa8\",\"667fd1a8c0aa43ee07a2ffa8\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/category/createCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"createCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"laptop\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/category/getAllCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"getAllCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "getAllQuestionList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"laptop\",\r\n    \"categories\":\"667fcc6d64d2d0f87b5326d5\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/question/getAllQuestionList",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"question",
+								"getAllQuestionList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createQuestion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"What is the best way to use earbuds?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/question/createQuestion",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"question",
+								"createQuestion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addQuestionsFromCSV",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "csvFile",
+									"type": "file",
+									"src": "/C:/Users/Admin/Downloads/tes.CSV"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/question/addQuestionsFromCSV",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"question",
+								"addQuestionsFromCSV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListOfQuestionOfEachCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/question/getListOfQuestionOfEachCategory",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"question",
+								"getListOfQuestionOfEachCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListOfQuestionOfEachCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/question/getListOfQuestionOfEachCategoryById?categoriesId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"question",
+								"getListOfQuestionOfEachCategoryById"
+							],
+							"query": [
+								{
+									"key": "categoriesId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteQuestionById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/question/deleteQuestionById?id=6680de0f710d863627d68199",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"question",
+								"deleteQuestionById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6680de0f710d863627d68199"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateQuestionById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"What is the best way to use earbuds?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/question/updateQuestionById/6680de0f710d863627d68198",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"question",
+								"updateQuestionById",
+								"6680de0f710d863627d68198"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
