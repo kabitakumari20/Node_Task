@@ -74,14 +74,7 @@ const login = async (req, res) => {
                 user: user,
                 token: token,
             });
-        } else {
-            const token = await generateAuthToken(user);
-            return res.status(200).json({
-                msg: "User logged in successfully",
-                user: user,
-                token: token,
-            });
-        }
+        } else throw "incorrect password"
     } catch (error) {
         console.error("Login error:", error);
         return res.status(500).json({ error: 'Login failed. Please check your credentials.' });

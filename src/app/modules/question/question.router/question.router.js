@@ -8,7 +8,9 @@ let router = express.Router(),
         getAllQuestionList,
         addQuestionsFromCSV,
         getListOfQuestionOfEachCategory,
-        getListOfQuestionOfEachCategoryById
+        getListOfQuestionOfEachCategoryById,
+        deleteQuestionById,
+        updateQuestionById
 
     } = require("../question.controller/question.controller")
 
@@ -21,5 +23,7 @@ router.get("/getAllQuestionList", getAllQuestionList)
 router.get("/getListOfQuestionOfEachCategory", getListOfQuestionOfEachCategory)
 
 router.get("/getListOfQuestionOfEachCategoryById", getListOfQuestionOfEachCategoryById)
+router.delete("/deleteQuestionById", deleteQuestionById)
+router.put("/updateQuestionById/:id", updateQuestionById)
 
 module.exports = router;

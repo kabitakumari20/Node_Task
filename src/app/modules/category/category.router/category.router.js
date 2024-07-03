@@ -4,7 +4,6 @@ let router = express.Router(),
     {
 
         createCategory,
-        bulkAddQuestions,
         getAllCategory,
         getCategoryById,
         updateCategory,
@@ -13,7 +12,6 @@ let router = express.Router(),
 
     } = require("../category.controller/category.controller")
 router.post("/createCategory", createCategory)
-router.post("/bulkAddQuestions", authenticate, bulkAddQuestions)
 router.get("/getAllCategory", getAllCategory)
 router.get("/getCategoryById", getCategoryById)
 router.put("/updateCategory", updateCategory)

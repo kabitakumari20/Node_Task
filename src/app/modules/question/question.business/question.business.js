@@ -33,7 +33,6 @@ const addQuestionsFromCSV = async (req, res) => {
         console.log("csvFile========>>", csvFile)
         const results = [];
         let csvData = await csvToJson(csvFile.path)
-        // let csvData = await csvToJson(req.file.path)
 
         console.log("csvData=========>>", csvData)
         for (const item of csvData) {
@@ -215,10 +214,41 @@ const getListOfQuestionOfEachCategoryById = async (req, res) => {
 };
 
 
+const deleteQuestionById = async (req, res) => {
+    try {
+        const { id } = req.query;
+        if (!id) throw "ID required";
+        const findQuestion = await Question.findByIdAndDelete(id);
+        if (!findQuestion) throw "Question not found";
+        return res.status(200).json({ msg: "Data deleted successfully", result: findQuestion });
+    } catch (error) {
+
+        return res.status(500).json({ error: error });
+    }
+};
+
+const updateQuestionById = async (req, res) => {
+    try {
+        let { id } = req.params
+        if (!id) throw "id required"
+        let findData = await Question.findByIdAndUpdate(id, { $set: req.body }, { new: true })
+        if (!findData) throw "data not found"
+        return res.status(200).json({
+            msg: "success",
+            result: findData
+        })
+    } catch (error) {
+        throw error
+    }
+
+}
+
 module.exports = {
     createQuestion,
     addQuestionsFromCSV,
     getAllQuestionList,
     getListOfQuestionOfEachCategory,
-    getListOfQuestionOfEachCategoryById
+    getListOfQuestionOfEachCategoryById,
+    deleteQuestionById,
+    updateQuestionById
 }
